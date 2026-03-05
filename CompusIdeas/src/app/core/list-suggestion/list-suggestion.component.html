@@ -1,0 +1,42 @@
+<div class="container">
+
+  <h2>Liste des suggestions</h2>
+
+  <!-- Search bar (Two-way binding) -->
+  <input
+    type="text"
+    placeholder="Rechercher par titre ou catégorie..."
+    [(ngModel)]="searchText"
+  />
+
+  <!-- Suggestions -->
+  <div *ngFor="let suggestion of filteredSuggestions" class="card">
+
+    <h3>{{ suggestion.title }}</h3> <!-- interpolation -->
+
+    <p>{{ suggestion.description }}</p>
+
+    <p><strong>Catégorie:</strong> {{ suggestion.category }}</p>
+
+    <p><strong>Date:</strong> {{ suggestion.date | date }}</p>
+
+    <p><strong>Status:</strong> {{ suggestion.status }}</p>
+
+    <p><strong>Likes:</strong> {{ suggestion.nbLikes }}</p>
+
+    <!-- Buttons only if NOT refused -->
+    <div *ngIf="suggestion.status !== 'refusee'">
+
+      <button (click)="likeSuggestion(suggestion)">
+        👍 Like
+      </button>
+
+      <button (click)="addToFavorites(suggestion)">
+        ⭐ Ajouter aux favoris
+      </button>
+
+    </div>
+
+  </div>
+
+</div>
