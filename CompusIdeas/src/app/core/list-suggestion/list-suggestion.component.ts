@@ -59,7 +59,9 @@ export class ListSuggestionComponent {
   }
 
   addToFavorites(s: Suggestion) {
-    this.favorites.push(s);
+    if(!this.favorites.find(fav => fav.id === s.id)) {
+      this.favorites.push(s);
+    }
   }
 
   get filteredSuggestions() {

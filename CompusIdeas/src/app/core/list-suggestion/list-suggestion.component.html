@@ -12,7 +12,7 @@
   <!-- Suggestions -->
   <div *ngFor="let suggestion of filteredSuggestions" class="card">
 
-    <h3>{{ suggestion.title }}</h3> <!-- interpolation -->
+    <h3>{{ suggestion.title }}</h3>
 
     <p>{{ suggestion.description }}</p>
 
@@ -24,7 +24,6 @@
 
     <p><strong>Likes:</strong> {{ suggestion.nbLikes }}</p>
 
-    <!-- Buttons only if NOT refused -->
     <div *ngIf="suggestion.status !== 'refusee'">
 
       <button (click)="likeSuggestion(suggestion)">
