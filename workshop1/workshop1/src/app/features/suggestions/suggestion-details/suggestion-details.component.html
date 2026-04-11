@@ -1,0 +1,68 @@
+<div class="page-container">
+
+  <h2 class="page-title">Suggestion Details</h2>
+
+  <div class="details-wrapper" *ngIf="suggestion; else notFound">
+    
+    <div class="card-hero">
+      <div class="card-header">
+        <h3 class="card-title">{{ suggestion.title }}</h3>
+        <span
+          class="badge"
+          [ngClass]="{
+            'badge-acceptee': suggestion.status === 'acceptee',
+            'badge-refusee': suggestion.status === 'refusee',
+            'badge-attente': suggestion.status === 'en_attente'
+          }"
+        >
+          {{ suggestion.status }}
+        </span>
+      </div>
+
+      <div class="card-meta-section">
+        <div class="meta-item">
+          <span class="meta-icon">📁</span>
+          <div class="meta-content">
+            <span class="meta-label">Category</span>
+            <span class="meta-value category">{{ suggestion.category }}</span>
+          </div>
+        </div>
+        <div class="meta-item">
+          <span class="meta-icon">📅</span>
+          <div class="meta-content">
+            <span class="meta-label">Date</span>
+            <span class="meta-value">{{ suggestion.date | date:'dd/MM/yyyy' }}</span>
+          </div>
+        </div>
+        <div class="meta-item">
+          <span class="meta-icon">👍</span>
+          <div class="meta-content">
+            <span class="meta-label">Likes</span>
+            <span class="meta-value">{{ suggestion.nbLikes }} votes</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card-content">
+      <h4 class="content-section-title">Description</h4>
+      <p class="card-description">{{ suggestion.description }}</p>
+
+      <div class="card-footer">
+        <button class="btn-back" (click)="backToList()">
+          ← Back to suggestions
+        </button>
+      </div>
+    </div>
+
+  </div>
+
+  <ng-template #notFound>
+    <div class="not-found-container">
+      <div class="not-found-icon">⚠️</div>
+      <p class="not-found-text">Suggestion not found.</p>
+      <button class="btn-back" (click)="backToList()">← Back to suggestions</button>
+    </div>
+  </ng-template>
+
+</div>

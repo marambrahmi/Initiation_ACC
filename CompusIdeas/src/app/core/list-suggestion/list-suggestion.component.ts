@@ -70,4 +70,5 @@ export class ListSuggestionComponent {
       s.category.toLowerCase().includes(this.searchText.toLowerCase())
     );
   }
+
 }

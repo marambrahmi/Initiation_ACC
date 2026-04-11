@@ -1,0 +1,31 @@
+<nav class="navbar">
+  <div class="navbar-container">
+    <div class="navbar-left">
+      <span class="brand">
+        <span class="brand-icon">💡</span>
+        Campus Ideas
+      </span>
+    </div>
+
+    <ul class="nav-links">
+      <li>
+        <a routerLink="/home" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+          <span class="nav-icon">🏠</span>
+          <span class="nav-text">Home</span>
+        </a>
+      </li>
+      <li>
+        <a routerLink="/suggestions/list" routerLinkActive="active">
+          <span class="nav-icon">💡</span>
+          <span class="nav-text">Ideas</span>
+        </a>
+      </li>
+    </ul>
+
+    <div class="navbar-right">
+      <button class="btn-suggestions">
+        ✨ New Idea
+      </button>
+    </div>
+  </div>
+</nav>
