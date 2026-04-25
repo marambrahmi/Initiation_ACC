@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms'; // ← pour ngModel
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule, provideHttpClient } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './core/header/header.component';
@@ -18,7 +19,8 @@ import { AppRoutingModule } from "./app-routing.module";
     NotfoundComponent,
 
   ],
-  imports: [BrowserModule, FormsModule, AppRoutingModule],
+  imports: [BrowserModule, FormsModule, AppRoutingModule, HttpClientModule],
+  providers: [provideHttpClient()],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

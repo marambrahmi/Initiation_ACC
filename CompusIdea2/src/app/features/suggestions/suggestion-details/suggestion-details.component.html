@@ -49,6 +49,9 @@
       <p class="card-description">{{ suggestion.description }}</p>
 
       <div class="card-footer">
+        <button class="btn-update" (click)="updateSuggestion()">
+          ✏️ Update
+        </button>
         <button class="btn-back" (click)="goBack()">
           ← Back to suggestions
         </button>

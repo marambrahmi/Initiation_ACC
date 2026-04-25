@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Suggestion } from '../../../models/suggestion';
-import { SuggestionFormComponent } from '../suggestion-form/suggestion-form.component';
+import { SuggestionService } from '../../../core/services/suggestion.service';
 
 @Component({
   selector: 'app-suggestion-details',
@@ -11,15 +11,33 @@ import { SuggestionFormComponent } from '../suggestion-form/suggestion-form.comp
 export class SuggestionDetailsComponent implements OnInit {
   suggestion: Suggestion | undefined;
 
-  constructor(private route: ActivatedRoute, private router: Router) {}
+  constructor(
+    private route: ActivatedRoute,
+    private router: Router,
+    private suggestionService: SuggestionService
+  ) {}
 
   ngOnInit(): void {
     const id = Number(this.route.snapshot.paramMap.get('id'));
-    this.suggestion = SuggestionFormComponent.suggestions.find(s => s.id === id);
+    this.suggestionService.getSuggestionById(id).subscribe({
+      next: (data) => {
+        this.suggestion = data;
+      },
+      error: (err) => {
+        console.error('Erreur lors du chargement de la suggestion:', err);
+        this.suggestion = undefined;
+      }
+    });
   }
 
   goBack(): void {
     this.router.navigate(['/suggestions/list']);
+  }
+
+  updateSuggestion(): void {
+    if (this.suggestion) {
+      this.router.navigate(['/suggestions/update', this.suggestion.id]);
+    }
   }
 }
 

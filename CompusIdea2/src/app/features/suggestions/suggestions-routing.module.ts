@@ -11,6 +11,7 @@ const routes: Routes = [
   { path: 'list', component: ListSuggestionComponent },
   { path: 'details/:id', component: SuggestionDetailsComponent },
   { path: 'add', component: SuggestionFormComponent },
+  { path: 'update/:id', component: SuggestionFormComponent },
 ];
 
 @NgModule({
