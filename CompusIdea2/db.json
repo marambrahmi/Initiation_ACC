@@ -1,0 +1,57 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  },
+  "suggestions": [
+    {
+      "id": 2,
+      "title": "Application mobile interne",
+      "description": "Développer une application mobile pour faciliter l'accès aux services internes",
+      "category": "Technologie et services numériques",
+      "date": "2024-01-14T09:20:00.000Z",
+      "status": "acceptee",
+      "nbLikes": 15
+    },
+    {
+      "id": 3,
+      "title": "Menu végétarien quotidien",
+      "description": "Ajouter une option végétarienne quotidienne à la cafétéria",
+      "category": "Restauration et cafétéria",
+      "date": "2024-01-12T11:45:00.000Z",
+      "status": "en_attente",
+      "nbLikes": 6
+    },
+    {
+      "id": 4,
+      "title": "Plus de poubelles de recyclage",
+      "description": "Installer davantage de poubelles de recyclage dans les espaces communs",
+      "category": "Hygiène et environnement",
+      "date": "2024-01-10T14:00:00.000Z",
+      "status": "en_attente",
+      "nbLikes": 16
+    },
+    {
+      "id": 5,
+      "title": "Navette entre les bâtiments",
+      "description": "Mettre en place une navette électrique entre les différents bâtiments du campus",
+      "category": "Transport et mobilité",
+      "date": "2024-01-08T16:30:00.000Z",
+      "status": "acceptee",
+      "nbLikes": 20
+    }
+  ]
+}
