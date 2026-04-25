@@ -49,7 +49,7 @@
       <p class="card-description">{{ suggestion.description }}</p>
 
       <div class="card-footer">
-        <button class="btn-back" (click)="backToList()">
+        <button class="btn-back" (click)="goBack()">
           ← Back to suggestions
         </button>
       </div>
@@ -61,7 +61,7 @@
     <div class="not-found-container">
       <div class="not-found-icon">⚠️</div>
       <p class="not-found-text">Suggestion not found.</p>
-      <button class="btn-back" (click)="backToList()">← Back to suggestions</button>
+      <button class="btn-back" (click)="goBack()">← Back to suggestions</button>
     </div>
   </ng-template>
 
